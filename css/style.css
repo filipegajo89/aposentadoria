@@ -1,0 +1,124 @@
+:root {
+  --primary-color: #15212d;
+  --secondary-color: #f5f5f5;
+  --accent-color: #ff9800;
+  --text-color: #333;
+  --radius: 8px;
+  --spacing: 1rem;
+  --transition: 0.3s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--secondary-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.site-header {
+  background: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  padding: var(--spacing) 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+  height: 48px;
+  margin-bottom: 0.5rem;
+}
+
+.container {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 var(--spacing);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.input-section, .result-section, .ads-section {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: var(--spacing);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-row label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-row input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  transition: border var(--transition);
+}
+
+.form-row input:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--accent-color);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.btn:hover {
+  background: darken(var(--accent-color), 10%);
+}
+
+.result-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing);
+}
+
+.result-card {
+  background: var(--secondary-color);
+  border-radius: var(--radius);
+  padding: var(--spacing);
+  text-align: center;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.ads-section {
+  text-align: center;
+}
+
+.site-footer {
+  text-align: center;
+  padding: var(--spacing);
+  font-size: 0.9rem;
+  color: #777;
+}
+
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: 2fr 1fr;
+  }
+  .ads-section {
+    grid-column: 1 / -1;
+  }
+}
