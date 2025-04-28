@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Simulador AposentarJá – Calcule seu aporte mensal para garantir sua renda de aposentadoria">
+  <title>Simulador AposentarJá</title>
+  <!-- Favicon -->
+  <link rel="icon" href="assets/logo.png">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <img src="assets/logo.png" alt="Logo Simulador AposentarJá" class="logo">
+    <h1>Simulador AposentarJá</h1>
+  </header>
+
+  <main class="container">
+    <section class="input-section">
+      <form id="simulator-form">
+        <div class="form-row">
+          <label for="ageNow">Idade Atual</label>
+          <input type="number" id="ageNow" required min="0" max="120">
+        </div>
+        <div class="form-row">
+          <label for="ageRetire">Idade de Aposentadoria</label>
+          <input type="number" id="ageRetire" required min="0" max="120">
+        </div>
+        <div class="form-row">
+          <label for="currentBalance">Saldo Atual (R$)</label>
+          <input type="number" id="currentBalance" required step="0.01" min="0">
+        </div>
+        <div class="form-row">
+          <label for="desiredIncome">Renda Mensal Desejada (R$)</label>
+          <input type="number" id="desiredIncome" required step="0.01" min="0">
+        </div>
+        <div class="form-row">
+          <label for="preReturn">Retorno Anual Esperado (%)</label>
+          <input type="number" id="preReturn" required step="0.01" min="0">
+        </div>
+        <div class="form-row">
+          <label for="postReturn">Retorno Pós-Aposentadoria (%)</label>
+          <input type="number" id="postReturn" required step="0.01" min="0">
+        </div>
+        <div class="form-row">
+          <label for="inflation">Inflação Anual (%)</label>
+          <input type="number" id="inflation" required step="0.01" min="0">
+        </div>
+        <button type="submit" class="btn">Calcular</button>
+      </form>
+    </section>
+
+    <section class="result-section">
+      <div class="result-card">
+        <h2>Aporte Mensal</h2>
+        <p id="monthlyContribution">--</p>
+      </div>
+      <div class="result-card">
+        <h2>Corpus Necessário</h2>
+        <p id="requiredCorpus">--</p>
+      </div>
+      <canvas id="accumulationChart"></canvas>
+    </section>
+
+    <aside class="ads-section">
+      <!-- AdSense: substitua pelo seu bloco de anúncio -->
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXX"
+           data-ad-slot="YYYYYYYYYYYY"
+           data-ad-format="auto"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Simulador AposentarJá. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/app.js"></script>
+  <script src="js/charts.js"></script>
+</body>
+</html>
